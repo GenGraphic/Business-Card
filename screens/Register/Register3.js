@@ -1,20 +1,21 @@
 import { Text, View, SafeAreaView, Image, TextInput, TouchableOpacity, ImageBackground } from 'react-native';
-import React, { useState, useContext } from 'react';
-import stylesRegister3 from '../styles/StylesRegister3';
+import React, { useContext } from 'react';
 
-import UserCard from '../components/UserCard';
+import stylesRegister3 from '../../styles/StylesRegister3';
 
-import UserCardContext from '../context/UserCardContext';
+import UserCard from '../../components/UserCard';
+
+import UserCardContext from '../../context/UserCardContext';
 
 const Register3 = ({navigation}) => {
   const {userCardInfo, setUserCardInfo} = useContext(UserCardContext);
 
   return (
-    <ImageBackground source={require('../assets/images/bkg.png')}>
+    <ImageBackground source={require('../../assets/images/bkg.png')}>
     <SafeAreaView style={stylesRegister3.MainContainer}>
       <View style={stylesRegister3.body}>
         <View style={stylesRegister3.logoCont}>
-            <Image source={require('../assets/images/logo.png')} style={stylesRegister3.logo}/>
+            <Image source={require('../../assets/images/logo.png')} style={stylesRegister3.logo}/>
             <Text style={stylesRegister3.title}>App Title</Text>
         </View>
 
@@ -40,7 +41,7 @@ const Register3 = ({navigation}) => {
           </View>
 
           <TouchableOpacity style={stylesRegister3.locationBtn}>
-            <Image source={require('../assets/images/icons/pin.png')} style={stylesRegister3.btnIcon}/>
+            <Image source={require('../../assets/images/icons/pin.png')} style={stylesRegister3.btnIcon}/>
             <Text style={stylesRegister3.BtnText}>LIVE LOCATION</Text>
           </TouchableOpacity>
 

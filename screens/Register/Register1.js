@@ -1,20 +1,21 @@
 import { Text, View, SafeAreaView, Image, TextInput, TouchableOpacity, ImageBackground } from 'react-native';
-import React, { useState, useContext } from 'react';
-import stylesRegister1 from '../styles/StylesRegister1';
+import React, { useContext } from 'react';
 
-import UserCard from '../components/UserCard';
+import stylesRegister1 from '../../styles/StylesRegister1';
 
-import UserCardContext from '../context/UserCardContext';
+import UserCard from '../../components/UserCard';
+
+import UserCardContext from '../../context/UserCardContext';
 
 const Register1 = ({navigation}) => {
   const {userCardInfo, setUserCardInfo} = useContext(UserCardContext);
 
   return (
-    <ImageBackground source={require('../assets/images/bkg.png')}>
+    <ImageBackground source={require('../../assets/images/bkg.png')}>
     <SafeAreaView style={stylesRegister1.MainContainer}>
       <View style={stylesRegister1.body}>
         <View style={stylesRegister1.logoCont}>
-            <Image source={require('../assets/images/logo.png')} style={stylesRegister1.logo}/>
+            <Image source={require('../../assets/images/logo.png')} style={stylesRegister1.logo}/>
             <Text style={stylesRegister1.title}>App Title</Text>
         </View>
 
@@ -22,7 +23,7 @@ const Register1 = ({navigation}) => {
 
         <View style={stylesRegister1.formCont}>
           <View>
-            <Text style={stylesRegister1.label}>Business Adress:</Text>            
+            <Text style={stylesRegister1.label}>Business Name:</Text>            
             <TextInput 
               placeholder='Ex: Gen Graphic' 
               style={stylesRegister1.inputfield}

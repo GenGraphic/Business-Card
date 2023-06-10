@@ -1,20 +1,21 @@
 import { Text, View, SafeAreaView, Image, TextInput, TouchableOpacity, ImageBackground } from 'react-native';
 import React, { useState, useContext } from 'react';
-import stylesRegister2 from '../styles/StylesRegister2';
 
-import UserCard from '../components/UserCard';
+import stylesRegister2 from '../../styles/StylesRegister2';
 
-import UserCardContext from '../context/UserCardContext';
+import UserCard from '../../components/UserCard';
+
+import UserCardContext from '../../context/UserCardContext';
 
 const Register2 = ({navigation}) => {
   const {userCardInfo, setUserCardInfo} = useContext(UserCardContext);
 
   return (
-    <ImageBackground source={require('../assets/images/bkg.png')}>
+    <ImageBackground source={require('../../assets/images/bkg.png')}>
     <SafeAreaView style={stylesRegister2.MainContainer}>
       <View style={stylesRegister2.body}>
         <View style={stylesRegister2.logoCont}>
-            <Image source={require('../assets/images/logo.png')} style={stylesRegister2.logo}/>
+            <Image source={require('../../assets/images/logo.png')} style={stylesRegister2.logo}/>
             <Text style={stylesRegister2.title}>App Title</Text>
         </View>
 

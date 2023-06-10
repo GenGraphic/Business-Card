@@ -1,9 +1,14 @@
 import { Text, View, SafeAreaView, Image, TextInput, TouchableOpacity, ImageBackground } from 'react-native'
-import React from 'react';
+import React, {useEffect, useState} from 'react';
+
 
 import stylesSignIn from '../styles/StyleSignIn'
 
 const Login = ({navigation}) => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+
   return (
     <ImageBackground source={require('../assets/images/bkg.png')} resizeMode='cover'>
       <SafeAreaView style={stylesSignIn.MainContainer}>
@@ -16,8 +21,8 @@ const Login = ({navigation}) => {
           <View style={stylesSignIn.formCont}>
               <Text style={stylesSignIn.formTitle}>Log in</Text>
               
-              <TextInput placeholder='Email Adress..' style={stylesSignIn.inputfield}/>
-              <TextInput placeholder='Password...' style={stylesSignIn.inputfield}/>
+              <TextInput placeholder='Email Adress..' style={stylesSignIn.inputfield} onChangeText={(text) => setEmail(text)} />
+              <TextInput placeholder='Password...' secureTextEntry style={stylesSignIn.inputfield} onChangeText={(text) => setPassword(text)} />
 
               <Text style={{marginTop: 20}}>No account yet?<Text style={stylesSignIn.links} onPress={() => navigation.navigate('Register')}> Register</Text></Text>
 

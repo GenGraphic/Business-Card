@@ -8,11 +8,15 @@ import { UserCardProvider } from './context/UserCardContext';
 import { MyCardsProvider } from './context/MyCardsContext';
 
 import Login from './screens/Login';
-import Register from './screens/Register';
-import Register1 from './screens/Register1';
-import Register2 from './screens/Register2';
-import Register3 from './screens/Register3';
-import Home from './screens/Home';
+
+import Register from './screens/Register/Register';
+import Register1 from './screens/Register/Register1';
+import Register2 from './screens/Register/Register2';
+import Register3 from './screens//Register/Register3';
+
+import Home from './screens/Home/Home';
+import CardEdit from './screens/Home/CardEdit';
+
 import MyCards from './screens/MyCards';
 import Scanner from './screens/Scanner';
 import Settings from './screens/Settings';
@@ -53,11 +57,15 @@ export default function App() {
         <MyCardsProvider>
           <Stack.Navigator>
             <Stack.Screen name='Register' component={Register} options={{headerShown: false}} />
-            <Stack.Screen name='Login' component={Login} options={{headerShown: false}} />
             <Stack.Screen name='Register1' component={Register1} options={{headerShown: false}} />
             <Stack.Screen name='Register2' component={Register2} options={{headerShown: false}} />
             <Stack.Screen name='Register3' component={Register3} options={{headerShown: false}} />
+
+            <Stack.Screen name='Login' component={Login} options={{headerShown: false}} />
+
             <Stack.Screen name='Home' component={Home} options={{headerShown: false}} />
+            <Stack.Screen name='Edit Card' component={CardEdit}/>
+
             <Stack.Screen name='MyCards' component={MyCards} options={{headerShown: false}} />
             <Stack.Screen name='Scanner' component={Scanner} options={{headerShown: false}}/>
             <Stack.Screen name='Settings' component={Settings} />
